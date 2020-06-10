@@ -13,6 +13,7 @@ const defaultSettings = {
     data_bg_multi: "bg-multi",
     data_bg_multi_hidpi: "bg-multi-hidpi",
     data_poster: "poster",
+    image_extension: 'webp',
     class_applied: "applied",
     class_loading: "loading",
     class_loaded: "loaded",

@@ -56,7 +56,7 @@ export const restoreOriginalImageAttributes = (element) => {
 export const setImageAttributes = (element, settings) => {
     setAttributeIfValue(element, "sizes", getData(element, settings.data_sizes));
     setAttributeIfValue(element, "srcset", getData(element, settings.data_srcset));
-    setAttributeIfValue(element, "src", getData(element, settings.data_src));
+    setAttributeIfValue(element, "src", getData(element, settings.data_src).replace('{ext}', settings.image_extension));
 };
 
 export const resetImageAttributes = (element) => {

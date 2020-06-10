@@ -37,6 +37,7 @@ define(function () { 'use strict';
     data_bg_multi: "bg-multi",
     data_bg_multi_hidpi: "bg-multi-hidpi",
     data_poster: "poster",
+    image_extension: 'webp',
     class_applied: "applied",
     class_loading: "loading",
     class_loaded: "loaded",
@@ -272,7 +273,7 @@ define(function () { 'use strict';
   var setImageAttributes = function setImageAttributes(element, settings) {
     setAttributeIfValue(element, "sizes", getData(element, settings.data_sizes));
     setAttributeIfValue(element, "srcset", getData(element, settings.data_srcset));
-    setAttributeIfValue(element, "src", getData(element, settings.data_src));
+    setAttributeIfValue(element, "src", getData(element, settings.data_src).replace('{ext}', settings.image_extension));
   };
   var resetImageAttributes = function resetImageAttributes(element) {
     resetAttribute(element, "src");
