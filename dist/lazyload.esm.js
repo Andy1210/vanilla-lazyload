@@ -239,7 +239,9 @@ const restoreOriginalImageAttributes = (element) => {
 const setImageAttributes = (element, settings) => {
     setAttributeIfValue(element, "sizes", getData(element, settings.data_sizes));
     setAttributeIfValue(element, "srcset", getData(element, settings.data_srcset));
-    setAttributeIfValue(element, "src", getData(element, settings.data_src).replace('{ext}', settings.image_extension));
+    const src = getData(element, settings.data_src);
+    const replacedSrc = src ? src.replace('{ext}', settings.image_extension) : src;
+    setAttributeIfValue(element, "src", replacedSrc);
 };
 
 const resetImageAttributes = (element) => {

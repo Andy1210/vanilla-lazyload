@@ -273,7 +273,9 @@ define(function () { 'use strict';
   var setImageAttributes = function setImageAttributes(element, settings) {
     setAttributeIfValue(element, "sizes", getData(element, settings.data_sizes));
     setAttributeIfValue(element, "srcset", getData(element, settings.data_srcset));
-    setAttributeIfValue(element, "src", getData(element, settings.data_src).replace('{ext}', settings.image_extension));
+    var src = getData(element, settings.data_src);
+    var replacedSrc = src ? src.replace('{ext}', settings.image_extension) : src;
+    setAttributeIfValue(element, "src", replacedSrc);
   };
   var resetImageAttributes = function resetImageAttributes(element) {
     resetAttribute(element, "src");
